@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Downloaded Assets\NAVI\Scripts\Control.cs" />
      <Compile Include="Assets\Downloaded Assets\NAVI\Scripts\maxCamera.cs" />
+     <Compile Include="Assets\FPS.cs" />
      <Compile Include="Assets\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\DroneMovement.cs" />
