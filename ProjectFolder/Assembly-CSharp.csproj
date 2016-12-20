@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\DroneMovement.cs" />
      <Compile Include="Assets\Scripts\SpeedCheck.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
+     <Compile Include="Assets\TestScript.cs" />
      <Compile Include="Assets\VrCameraControl.cs" />
      <Compile Include="Assets\ZED\Scripts\Samples\ScreenManagerRGB.cs" />
      <Compile Include="Assets\ZED\Scripts\Samples\ScreenManagerRGBDepth.cs" />
