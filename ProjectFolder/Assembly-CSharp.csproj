@@ -48,20 +48,22 @@
   <ItemGroup>
      <Compile Include="Assets\Downloaded Assets\NAVI\Scripts\Control.cs" />
      <Compile Include="Assets\Downloaded Assets\NAVI\Scripts\maxCamera.cs" />
-     <Compile Include="Assets\FPS.cs" />
-     <Compile Include="Assets\FieldOfView.cs" />
+     <Compile Include="Assets\ScanningObject.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\DroneMovement.cs" />
+     <Compile Include="Assets\Scripts\FPS.cs" />
+     <Compile Include="Assets\Scripts\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\SpeedCheck.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
-     <Compile Include="Assets\TestScript.cs" />
-     <Compile Include="Assets\VrCameraControl.cs" />
+     <Compile Include="Assets\Scripts\VrCameraControl.cs" />
      <Compile Include="Assets\ZED\Scripts\Samples\ScreenManagerRGB.cs" />
      <Compile Include="Assets\ZED\Scripts\Samples\ScreenManagerRGBDepth.cs" />
      <Compile Include="Assets\ZED\Scripts\Samples\ZEDAsTexture.cs" />
      <Compile Include="Assets\ZED\Scripts\ZEDCamera.cs" />
      <Compile Include="Assets\ZED\Scripts\ZEDManager.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
+     <None Include="Assets\Shaders\TestShader.shader" />
+     <None Include="Assets\Shaders\HoloTriangles.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity 5.5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -38,11 +38,11 @@ public class DroneMovement : MonoBehaviour
         droneRB.AddRelativeForce(Vector3.up * upForce);
         drone.transform.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
         droneRB.rotation = Quaternion.Euler(new Vector3(0, currentYRotation, 0));
-        if (Input.GetButtonDown("FireLeft"))
-        {
-            autopilot = !autopilot;
+        //if (Input.GetButtonDown("FireLeft"))
+        //{
+        //    autopilot = !autopilot;
 
-        }
+        //}
         if (autopilot == false)
         {
             HorizontalMovement();
