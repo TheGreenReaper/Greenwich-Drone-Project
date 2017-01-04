@@ -47,12 +47,9 @@ public class DroneMovement : MonoBehaviour
         {
             HorizontalMovement();
             Rotation();
-            Swerve();
+            //Swerve();
         }
-        if (Input.GetButtonDown("FireRight"))
-        {
-            SetCamera();
-        }
+        
         
         //CheckKey();
     }
@@ -85,12 +82,12 @@ public class DroneMovement : MonoBehaviour
     void HorizontalMovement()
     {
          //save
-        if (Input.GetAxis("RightStickVertical") != 0)
+        if (Input.GetButton("FireLeft"))
         {
-            droneRB.AddRelativeForce(Vector3.forward * Input.GetAxis("RightStickVertical") * movementSpeedForward);
+            droneRB.AddRelativeForce(Vector3.forward * movementSpeedForward);
             
         }
-        tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * Input.GetAxis("RightStickVertical"), ref tiltVelocity, 0.01f);
+        //tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * Input.GetAxis("RightStickVertical"), ref tiltVelocity, 0.01f);
 
     }
     void Rotation()

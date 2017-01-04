@@ -53,7 +53,8 @@
      <Compile Include="Assets\Scripts\FPS.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\GhostFreeRoamCamera.cs" />
-     <Compile Include="Assets\Scripts\Scan.cs" />
+     <Compile Include="Assets\Scripts\ScanObject.cs" />
+     <Compile Include="Assets\Scripts\Scanner.cs" />
      <Compile Include="Assets\Scripts\SpeedCheck.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
      <Compile Include="Assets\Scripts\VrCameraControl.cs" />
