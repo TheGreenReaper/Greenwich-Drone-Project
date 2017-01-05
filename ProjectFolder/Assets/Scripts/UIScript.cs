@@ -18,6 +18,5 @@ public class UIScript : MonoBehaviour {
         speed.text = "Speed: " + "\n X: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().velocity.x.ToString("F1")
             + "\n Y: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().velocity.y.ToString("F1")
             + "\n Y: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().velocity.z.ToString("F1");
-        autoPilot.text = "Autopilot activated: " + GameObject.FindGameObjectWithTag("Player").GetComponent<DroneMovement>().autopilot.ToString();
     }
 }

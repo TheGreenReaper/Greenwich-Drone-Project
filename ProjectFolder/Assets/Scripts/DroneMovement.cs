@@ -17,54 +17,30 @@ public class DroneMovement : MonoBehaviour
     private float sideMovementAmount = 300;
     private float tiltAmountSideways;
     private float tiltAmountVelocity;
-    public bool autopilot;
-    public GameObject camera1;
-    public GameObject camera2;
     GameObject speedCheck;
     // Use this for initialization
     void Start()
     {
         drone.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z));
         speedCheck = GameObject.Find("SpeedCheck");
-        autopilot = false;  
         droneRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        HorizontalMovement();
+        Rotation();
         VerticalMovement();
         ClampingSpeedValues();
         droneRB.AddRelativeForce(Vector3.up * upForce);
         drone.transform.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
         droneRB.rotation = Quaternion.Euler(new Vector3(0, currentYRotation, 0));
-        //if (Input.GetButtonDown("FireLeft"))
-        //{
-        //    autopilot = !autopilot;
+    }
 
-        //}
-        if (autopilot == false)
-        {
-            HorizontalMovement();
-            Rotation();
-            //Swerve();
-        }
-        
-        
-        //CheckKey();
-    }
-    void SetCamera()
-    {
-        camera1.SetActive(!camera1.activeInHierarchy);
-        camera2.SetActive(!camera2.activeInHierarchy);
-    }
     void VerticalMovement()
     {
-        if (autopilot == true)
-        {
-            upForce = 98.1f;
-        }
-        else if(Input.GetAxis("Vertical") == 1)
+        if(Input.GetAxis("Vertical") == 1)
         {
             upForce = 250;
         }
@@ -74,8 +50,7 @@ public class DroneMovement : MonoBehaviour
         }
         else 
         {
-            upForce = 98.1f;
-            
+            upForce = 98.1f;         
         }
 
     }

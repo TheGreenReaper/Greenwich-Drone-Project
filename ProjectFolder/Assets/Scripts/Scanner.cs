@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scanner : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Scanner : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit,25))
+            if (Physics.Raycast(ray, out hit,50))
             {
                 print(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.name == "King Williams Holo")
@@ -32,6 +33,10 @@ public class Scanner : MonoBehaviour
                     hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
                 }
             }
+        }
+        if (Input.GetButtonDown("Reset") || Input.GetMouseButton(1))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

@@ -5,18 +5,20 @@ using UnityEngine;
 public class ScanObject : MonoBehaviour
 {
     Material mat;
+    public Material notMaterial;
     Color color;
     float t;
     int time;
+    bool notificationShown = false;
     public GameObject notificationsPlane;
-    GameObject instant;
 	// Use this for initialization
 	void Start () {
+        
         mat = GetComponent<Renderer>().material;
         color = mat.color;
         color.a = 0.4f;
         InvokeRepeating("Fade", 0, 0.01f);
-        Invoke("SpawnNotifications", 4.5f);
+        StartCoroutine(Notification());
         
 	}
 	
@@ -28,7 +30,7 @@ public class ScanObject : MonoBehaviour
 	}
     void Fade()
     {
-        if (instant == null)
+        if (notificationShown == false)
         {
             if (color.a < 0)
             {
@@ -49,13 +51,14 @@ public class ScanObject : MonoBehaviour
             color.a += 0.01f * t;
         }
     }
-    void SpawnNotifications()
+    IEnumerator Notification()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        instant = Instantiate(notificationsPlane, player.transform, player.transform);
-        instant.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 8);
-        
-        Destroy(instant, 5);
-        Destroy(gameObject, 5.1f);
+        notificationsPlane.GetComponent<Renderer>().material = notMaterial;
+        yield return new WaitForSeconds(4.5f);
+        notificationShown = true;
+        notificationsPlane.SetActive(true);
+        yield return new WaitForSeconds(3);
+        notificationsPlane.SetActive(false);
+        Destroy(gameObject);
     }
 }
