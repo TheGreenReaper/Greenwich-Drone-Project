@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Scanner : MonoBehaviour
 {
-
+    public GameObject light;
     // Use this for initialization
 
     void Start()
@@ -21,7 +21,7 @@ public class Scanner : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit,50))
+            if (Physics.Raycast(ray, out hit, 50))
             {
                 print(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.name == "King Williams Holo")
@@ -34,9 +34,15 @@ public class Scanner : MonoBehaviour
                 }
             }
         }
-        if (Input.GetButtonDown("Reset") || Input.GetMouseButton(1))
+        if (Input.GetButtonDown("Reset") || Input.GetMouseButtonDown(1))
         {
-            SceneManager.LoadScene(0);
+            int anti = QualitySettings.antiAliasing;
+            switch (anti)
+            {
+                case 2: QualitySettings.antiAliasing = 4; break;
+                case 4: QualitySettings.antiAliasing = 8; break;
+                case 8: QualitySettings.antiAliasing = 2; break;
+            }
         }
     }
 }
