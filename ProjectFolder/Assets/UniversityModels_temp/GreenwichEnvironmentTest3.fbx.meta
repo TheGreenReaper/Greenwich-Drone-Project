@@ -39,6 +39,7 @@ ModelImporter:
     100062: Plane.020
     100064: Plane.022
     100066: Plane.023
+    100068: KingWilliam_MeshPart5
     400000: Circle.001
     400002: Cube.058
     400004: Cube.059
@@ -73,6 +74,7 @@ ModelImporter:
     400062: Plane.020
     400064: Plane.022
     400066: Plane.023
+    400068: KingWilliam_MeshPart5
     2300000: Circle.001
     2300002: Cube.058
     2300004: Cube.059
@@ -104,6 +106,7 @@ ModelImporter:
     2300056: Plane.020
     2300058: Plane.022
     2300060: Plane.023
+    2300062: KingWilliam_MeshPart5
     3300000: Circle.001
     3300002: Cube.058
     3300004: Cube.059
@@ -135,6 +138,7 @@ ModelImporter:
     3300056: Plane.020
     3300058: Plane.022
     3300060: Plane.023
+    3300062: KingWilliam_MeshPart5
     4300000: Plane.023
     4300002: Plane.022
     4300004: Plane.020
@@ -166,6 +170,7 @@ ModelImporter:
     4300056: KingWilliam_MeshPart4
     4300058: Plane.013
     4300060: Plane.012
+    4300062: KingWilliam_MeshPart5
   materials:
     importMaterials: 0
     materialName: 0
@@ -191,11 +196,11 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
