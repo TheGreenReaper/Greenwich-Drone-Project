@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Scanner : MonoBehaviour
 {
-    public GameObject light;
+    public GameObject notificationPlane;
     // Use this for initialization
 
     void Start()
@@ -16,33 +16,37 @@ public class Scanner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("FireRight"))
-        {
+
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 50))
+            if (Physics.Raycast(ray, out hit, 100))
             {
-                print(hit.collider.gameObject.name);
-                if (hit.collider.gameObject.name == "King Williams Holo")
+                if (Input.GetButtonDown("FireRight") || Input.GetKey("w"))
                 {
-                    hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                    if (hit.collider.gameObject.tag == "Building")
+                    {
+                        print(hit.collider.gameObject.name);
+                        if (hit.collider.gameObject.name == "King Williams Holo")
+                        {
+                            hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                        }
+                        if (hit.collider.gameObject.name == "Queen Mary Holo")
+                        {
+                            hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                        }
+                    }
                 }
-                if (hit.collider.gameObject.name == "Queen Mary Holo")
-                {
-                    hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
-                }
+                notificationPlane.SetActive(true);
             }
-        }
+            else
+            {
+                notificationPlane.SetActive(false);
+            }
+
         if (Input.GetButtonDown("Reset") || Input.GetMouseButtonDown(1))
         {
-            int anti = QualitySettings.antiAliasing;
-            switch (anti)
-            {
-                case 2: QualitySettings.antiAliasing = 4; break;
-                case 4: QualitySettings.antiAliasing = 8; break;
-                case 8: QualitySettings.antiAliasing = 2; break;
-            }
+            SceneManager.LoadScene(0);
         }
     }
 }

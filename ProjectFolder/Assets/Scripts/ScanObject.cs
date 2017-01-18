@@ -11,6 +11,7 @@ public class ScanObject : MonoBehaviour
     int time;
     bool notificationShown = false;
     public GameObject notificationsPlane;
+    public GameObject actualBuilding;
 	// Use this for initialization
 	void Start () {
         
@@ -48,15 +49,17 @@ public class ScanObject : MonoBehaviour
             {
                 t = -1;
             }
-            color.a += 0.01f * t;
+            color.a += 0.004f * t;
         }
     }
     IEnumerator Notification()
     {
         notificationsPlane.GetComponent<Renderer>().material = notMaterial;
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(6);
         notificationShown = true;
+        color.a = 0;
         notificationsPlane.SetActive(true);
+        actualBuilding.SetActive(true);
         yield return new WaitForSeconds(3);
         notificationsPlane.SetActive(false);
         Destroy(gameObject);
