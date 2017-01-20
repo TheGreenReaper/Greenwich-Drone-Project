@@ -60,6 +60,7 @@ public class ScanObject : MonoBehaviour
         color.a = 0;
         notificationsPlane.SetActive(true);
         actualBuilding.SetActive(true);
+        GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSeconds(3);
         notificationsPlane.SetActive(false);
         Destroy(gameObject);
