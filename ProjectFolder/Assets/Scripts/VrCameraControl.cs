@@ -21,10 +21,9 @@ public class VrCameraControl : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            transform.Translate(camera.forward);
+            transform.Translate(Camera.main.transform.forward);
         }
-        input1.text = "Mouse X: " + Input.GetAxis("Mouse X").ToString("F1") + "\n " +
-            "Mouse Y: " + Input.GetAxis("Mouse X").ToString("F1");
+
 
 
 
@@ -39,15 +38,5 @@ public class VrCameraControl : MonoBehaviour
         //    SetMat();
         //}
     }
-    void SetMat()
-    {
-        if (RenderSettings.skybox.name == mat1.name)
-        {
-            RenderSettings.skybox = mat2;
-        }
-        else
-        {
-            RenderSettings.skybox = mat1;
-        }
-    }
+
 }

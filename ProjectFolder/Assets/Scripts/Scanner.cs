@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Scanner : MonoBehaviour
 {
+    public GameObject centerPoint;
     public GameObject notificationPlane;
     // Use this for initialization
 
@@ -16,28 +17,27 @@ public class Scanner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 100))
+            Vector3 fwd = centerPoint.transform.position;
+            if (Physics.Raycast(fwd,centerPoint.transform.forward, out hit, 100))
             {
-                if (Input.GetButtonDown("FireRight") || Input.GetKey("w"))
+                if (hit.collider.gameObject.tag == "Building")
                 {
-                    if (hit.collider.gameObject.tag == "Building")
+                    if (Input.GetButtonDown("FireRight") || Input.GetKey("w"))
                     {
                         print(hit.collider.gameObject.name);
                         if (hit.collider.gameObject.name == "King Williams Holo")
                         {
                             hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
                         }
-                        if (hit.collider.gameObject.name == "Queen Mary Holo")
+                        if (hit.collider.gameObject.name == "Queen Anne Holo")
                         {
                             hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
                         }
                     }
+                    notificationPlane.SetActive(true);
                 }
-                notificationPlane.SetActive(true);
             }
             else
             {
