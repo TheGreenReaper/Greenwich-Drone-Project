@@ -1,34 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScanObject : MonoBehaviour
 {
     Material mat;
-    public Material notMaterial;
     Color color;
     float t;
     int time;
     bool notificationShown = false;
     public GameObject notificationsPlane;
     public GameObject actualBuilding;
-	// Use this for initialization
-	void Start () {
-        
+    // Use this for initialization
+    void Start()
+    {
+
         mat = GetComponent<Renderer>().material;
         color = mat.color;
         color.a = 0.4f;
         InvokeRepeating("Fade", 0, 0.01f);
         StartCoroutine(Notification());
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         GetComponent<Renderer>().material.color = color;
 
 
-	}
+    }
     void Fade()
     {
         if (notificationShown == false)
@@ -54,7 +56,8 @@ public class ScanObject : MonoBehaviour
     }
     IEnumerator Notification()
     {
-        notificationsPlane.GetComponent<Renderer>().material = notMaterial;
+        gameObject.tag = "Untagged";
+        notificationsPlane.GetComponent<Text>().text = gameObject.name + " discovered";
         yield return new WaitForSeconds(6);
         notificationShown = true;
         color.a = 0;

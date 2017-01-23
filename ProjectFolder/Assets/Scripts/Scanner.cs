@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Scanner : MonoBehaviour
@@ -24,19 +25,22 @@ public class Scanner : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Building")
             {
+                notificationPlane.SetActive(true);
                 if (Input.GetButtonDown("FireRight") || Input.GetKey("w"))
                 {
                     print(hit.collider.gameObject.name);
-                    if (hit.collider.gameObject.name == "King Williams Holo")
+                    if (hit.collider.gameObject.name == "King Williams")
                     {
                         hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                        notificationPlane.SetActive(false);
                     }
-                    if (hit.collider.gameObject.name == "Queen Anne Holo")
+                    if (hit.collider.gameObject.name == "Queen Anne")
                     {
                         hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                        notificationPlane.SetActive(false);
                     }
                 }
-                notificationPlane.SetActive(true);
+                
             }
         }
         else
