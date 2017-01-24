@@ -11,27 +11,47 @@ ModelImporter:
     100006: KingWilliamMain_LOD1
     100008: KingWilliamMain_LOD2
     100010: //RootNode
+    100012: KingWilliamMain_001_LOD0_MeshPart0
+    100014: KingWilliamMain_001_LOD0_MeshPart1
+    100016: KingWilliamMain_LOD1_MeshPart0
+    100018: KingWilliamMain_LOD1_MeshPart1
     400000: KingWilliamMain_000_LOD0
     400002: KingWilliamMain_001_LOD0
     400004: KingWilliamMain_002_LOD0
     400006: KingWilliamMain_LOD1
     400008: KingWilliamMain_LOD2
     400010: //RootNode
+    400012: KingWilliamMain_001_LOD0_MeshPart0
+    400014: KingWilliamMain_001_LOD0_MeshPart1
+    400016: KingWilliamMain_LOD1_MeshPart0
+    400018: KingWilliamMain_LOD1_MeshPart1
     2300000: KingWilliamMain_000_LOD0
     2300002: KingWilliamMain_001_LOD0
     2300004: KingWilliamMain_002_LOD0
     2300006: KingWilliamMain_LOD1
     2300008: KingWilliamMain_LOD2
+    2300010: KingWilliamMain_001_LOD0_MeshPart0
+    2300012: KingWilliamMain_001_LOD0_MeshPart1
+    2300014: KingWilliamMain_LOD1_MeshPart0
+    2300016: KingWilliamMain_LOD1_MeshPart1
     3300000: KingWilliamMain_000_LOD0
     3300002: KingWilliamMain_001_LOD0
     3300004: KingWilliamMain_002_LOD0
     3300006: KingWilliamMain_LOD1
     3300008: KingWilliamMain_LOD2
+    3300010: KingWilliamMain_001_LOD0_MeshPart0
+    3300012: KingWilliamMain_001_LOD0_MeshPart1
+    3300014: KingWilliamMain_LOD1_MeshPart0
+    3300016: KingWilliamMain_LOD1_MeshPart1
     4300000: KingWilliamMain_LOD2
     4300002: KingWilliamMain_LOD1
     4300004: KingWilliamMain_000_LOD0
     4300006: KingWilliamMain_002_LOD0
     4300008: KingWilliamMain_001_LOD0
+    4300010: KingWilliamMain_LOD1_MeshPart0
+    4300012: KingWilliamMain_LOD1_MeshPart1
+    4300014: KingWilliamMain_001_LOD0_MeshPart0
+    4300016: KingWilliamMain_001_LOD0_MeshPart1
     20500000: //RootNode
   materials:
     importMaterials: 1
@@ -65,7 +85,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
