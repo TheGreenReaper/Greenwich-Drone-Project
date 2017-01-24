@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 560736c06bee02b4396da81d147e0313
+timeCreated: 1485254084
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Environment1
+    100002: Environment_Grass
+    100004: //RootNode
+    100006: 'Guardhouse '
+    100008: MainGatePosts
+    100010: Paths
+    100012: Railing_large
+    100014: Railing_Small
+    100016: RailingBlocks
+    100018: River
+    100020: Steps
+    100022: Walkway
+    400000: Environment1
+    400002: Environment_Grass
+    400004: //RootNode
+    400006: 'Guardhouse '
+    400008: MainGatePosts
+    400010: Paths
+    400012: Railing_large
+    400014: Railing_Small
+    400016: RailingBlocks
+    400018: River
+    400020: Steps
+    400022: Walkway
+    2300000: Environment1
+    2300002: Environment_Grass
+    2300004: 'Guardhouse '
+    2300006: MainGatePosts
+    2300008: Paths
+    2300010: Railing_large
+    2300012: Railing_Small
+    2300014: RailingBlocks
+    2300016: River
+    2300018: Steps
+    2300020: Walkway
+    3300000: Environment1
+    3300002: Environment_Grass
+    3300004: 'Guardhouse '
+    3300006: MainGatePosts
+    3300008: Paths
+    3300010: Railing_large
+    3300012: Railing_Small
+    3300014: RailingBlocks
+    3300016: River
+    3300018: Steps
+    3300020: Walkway
+    4300000: Environment1
+    4300002: Environment_Grass
+    4300004: Paths
+    4300006: Walkway
+    4300008: Steps
+    4300010: River
+    4300012: MainGatePosts
+    4300014: 'Guardhouse '
+    4300016: RailingBlocks
+    4300018: Railing_Small
+    4300020: Railing_large
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
