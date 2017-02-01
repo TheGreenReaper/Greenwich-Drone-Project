@@ -59,6 +59,7 @@ public class ScanObject : MonoBehaviour
         gameObject.tag = "Untagged";
         notificationsPlane.GetComponent<Text>().text = gameObject.name + " discovered";
         yield return new WaitForSeconds(6);
+        GetComponent<AudioSource>().enabled = true;
         notificationShown = true;
         color.a = 0;
         notificationsPlane.SetActive(true);

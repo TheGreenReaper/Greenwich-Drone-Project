@@ -50,22 +50,7 @@ public class Scanner : MonoBehaviour
 
         if (Input.GetButtonDown("Reset") || Input.GetMouseButtonDown(1))
         {
-            float i = QualitySettings.lodBias;
-            string lodDetail = i.ToString("F2");
-            print(lodDetail);
-            switch (lodDetail)
-            {
-                case "0.50":
-                    QualitySettings.lodBias = 0.1f;
-                    break;
-                case "0.25":
-                    QualitySettings.lodBias = 0.50f;
-                    break;
-                case "0.10":
-                    QualitySettings.lodBias = 0.25f;
-                    break;
-                
-            }
+            SceneManager.LoadScene(0);
         }
     }
 }
