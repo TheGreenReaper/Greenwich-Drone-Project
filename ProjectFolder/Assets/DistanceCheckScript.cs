@@ -12,7 +12,6 @@ public class DistanceCheckScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(Vector3.Distance(player.position, transform.position));
         if (Vector3.Distance(player.position, transform.position) < distance)
         {
             GetComponent<MeshRenderer>().enabled = true;
