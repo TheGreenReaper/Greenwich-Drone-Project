@@ -20,11 +20,13 @@ ModelImporter:
     2300004: PA_DroneBladeRight
     2300006: PA_DroneWingLeft
     2300008: PA_DroneWingRight
+    2300010: //RootNode
     3300000: PA_Drone
     3300002: PA_DroneBladeLeft
     3300004: PA_DroneBladeRight
     3300006: PA_DroneWingLeft
     3300008: PA_DroneWingRight
+    3300010: //RootNode
     4300000: PA_Drone
     4300002: PA_DroneWingLeft
     4300004: PA_DroneBladeLeft
