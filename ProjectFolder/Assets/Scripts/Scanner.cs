@@ -39,6 +39,16 @@ public class Scanner : MonoBehaviour
                         hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
                         notificationPlane.SetActive(false);
                     }
+                    if (hit.collider.gameObject.name == "King Charles")
+                    {
+                        hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                        notificationPlane.SetActive(false);
+                    }
+                    if (hit.collider.gameObject.name == "Queen Mary")
+                    {
+                        hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                        notificationPlane.SetActive(false);
+                    }
                 }
                 
             }

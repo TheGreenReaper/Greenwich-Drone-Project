@@ -6,7 +6,7 @@ public class FPS : MonoBehaviour
     float deltaTime = 0.0f;
     void Start()
     {
-        Application.targetFrameRate = 45;
+        //Application.targetFrameRate = 45;
     }
     void Update()
     {
