@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DistanceCheckScript : MonoBehaviour {
     public Transform player;
-    float distance = 150;
+    float distance = 250;
 	// Use this for initialization
 	void Start () {
 		

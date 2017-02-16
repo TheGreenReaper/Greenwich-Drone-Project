@@ -15,11 +15,6 @@ public class ScanObject : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        mat = GetComponent<Renderer>().material;
-        color = mat.color;
-        color.a = 0.4f;
-        InvokeRepeating("Fade", 0, 0.01f);
         StartCoroutine(Notification());
 
     }
@@ -33,36 +28,21 @@ public class ScanObject : MonoBehaviour
     }
     void Fade()
     {
-        if (notificationShown == false)
-        {
-            if (color.a < 0)
-            {
-                color.a = 0;
-            }
-            if (color.a > 0.4f)
-            {
-                color.a = 0.4f;
-            }
-            if (color.a == 0)
-            {
-                t = 1;
-            }
-            if (color.a == 0.4f)
-            {
-                t = -1;
-            }
-            color.a += 0.004f * t;
-        }
+       
     }
     IEnumerator Notification()
     {
         gameObject.tag = "Untagged";
-        notificationsPlane.GetComponent<Text>().text = gameObject.name + " discovered";
-        yield return new WaitForSeconds(6);
-        GetComponent<AudioSource>().enabled = true;
-        notificationShown = true;
-        color.a = 0;
         notificationsPlane.SetActive(true);
+        notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(33%)";
+        yield return new WaitForSeconds(1);
+        notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(66%)"; 
+        yield return new WaitForSeconds(1);
+        notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(99%)";
+        yield return new WaitForSeconds(1);
+        notificationsPlane.GetComponent<Text>().text = gameObject.name + " discovered";
+        GetComponent<AudioSource>().enabled = true;
+        notificationShown = true; 
         actualBuilding.SetActive(true);
         GetComponent<MeshRenderer>().enabled = false;
         yield return new WaitForSeconds(3);
