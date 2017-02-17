@@ -18,19 +18,20 @@ public class DroneMovement : MonoBehaviour
     private float tiltAmountSideways;
     private float tiltAmountVelocity;
     GameObject speedCheck;
-    // Use this for initialization
+
     void Start()
     {
         drone.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z));
         speedCheck = GameObject.Find("SpeedCheck");
         droneRB = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
+        print(Input.GetAxis("Horizontal").ToString("F2"));
+        print(Input.GetAxis("Vertical").ToString("F2"));
         HorizontalMovement();
         Rotation();
+        Swerve();
         VerticalMovement();
         ClampingSpeedValues();
         droneRB.AddRelativeForce(Vector3.up * upForce);
@@ -40,11 +41,11 @@ public class DroneMovement : MonoBehaviour
 
     void VerticalMovement()
     {
-        if(Input.GetAxis("Vertical") == 1)
+        if(Input.GetAxis("LeftVertical") > 0)
         {
             upForce = 250;
         }
-        else if (Input.GetAxis("Vertical") == -1)
+        else if (Input.GetAxis("LeftVertical") < 0)
         {
             upForce = -150;
         }
@@ -57,21 +58,26 @@ public class DroneMovement : MonoBehaviour
     void HorizontalMovement()
     {
          //save
-        if (Input.GetButton("FireLeft"))
+        if (Input.GetAxis("RightVertical") > 0)
         {
             droneRB.AddRelativeForce(Vector3.forward * movementSpeedForward);
-            
+
+        }
+        else if (Input.GetAxis("RightVertical") < 0)
+        {
+            droneRB.AddRelativeForce(-Vector3.forward * movementSpeedForward);
+
         }
         //tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * Input.GetAxis("RightStickVertical"), ref tiltVelocity, 0.01f);
 
     }
     void Rotation()
     {
-        if (Input.GetAxis("Horizontal") == -1)
+        if (Input.GetAxis("LeftHorizontal") < 0)
         {
             wantedYRotation -= rotateAmountByKeys;
         }
-        if (Input.GetAxis("Horizontal") == 1)
+        if (Input.GetAxis("LeftHorizontal") > 0)
         {
             wantedYRotation += rotateAmountByKeys;
         }
@@ -98,10 +104,10 @@ public class DroneMovement : MonoBehaviour
     }
     void Swerve()
     {
-        if (Mathf.Abs(Input.GetAxis("RightStickHorizontal")) > 0.2f)
+        if (Mathf.Abs(Input.GetAxis("RightHorizontal")) > 0.2f)
         {
-            droneRB.AddRelativeForce(Vector3.right * Input.GetAxis("RightStickHorizontal") * sideMovementAmount);
-            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * Input.GetAxis("RightStickHorizontal"), ref tiltAmountVelocity, 0.5f);
+            droneRB.AddRelativeForce(Vector3.right * Input.GetAxis("RightHorizontal") * sideMovementAmount);
+            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * Input.GetAxis("RightHorizontal"), ref tiltAmountVelocity, 0.5f);
         }
         else
         {

@@ -26,7 +26,7 @@ public class Scanner : MonoBehaviour
             if (hit.collider.gameObject.tag == "Building")
             {
                 notificationPlane.SetActive(true);
-                if (Input.GetButtonDown("FireRight") || Input.GetKey("w"))
+                if (Input.GetButtonDown("joystick button 2") || Input.GetKey("w"))
                 {
                     print(hit.collider.gameObject.name);
                     if (hit.collider.gameObject.name == "King Williams")
