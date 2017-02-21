@@ -33,7 +33,7 @@ public class DroneMovement : MonoBehaviour
         Rotation();
         Swerve();
         VerticalMovement();
-        ClampingSpeedValues();
+        //ClampingSpeedValues();
         droneRB.AddRelativeForce(Vector3.up * upForce);
         drone.transform.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
         droneRB.rotation = Quaternion.Euler(new Vector3(0, currentYRotation, 0));
