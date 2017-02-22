@@ -46,9 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ActivateSoundAfterTime.cs" />
-     <Compile Include="Assets\DistanceCheckScript.cs" />
-     <Compile Include="Assets\InputTester.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRBoundary.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
@@ -77,11 +74,14 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
+     <Compile Include="Assets\Scripts\ActivateSoundAfterTime.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\DistanceCheckScript.cs" />
      <Compile Include="Assets\Scripts\DroneMovement.cs" />
      <Compile Include="Assets\Scripts\FPS.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\GhostFreeRoamCamera.cs" />
+     <Compile Include="Assets\Scripts\InputTester.cs" />
      <Compile Include="Assets\Scripts\ScanObject.cs" />
      <Compile Include="Assets\Scripts\Scanner.cs" />
      <Compile Include="Assets\Scripts\SpeedCheck.cs" />

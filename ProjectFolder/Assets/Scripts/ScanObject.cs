@@ -40,7 +40,7 @@ public class ScanObject : MonoBehaviour
         yield return new WaitForSeconds(1);
         notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(99%)";
         yield return new WaitForSeconds(1);
-        notificationsPlane.GetComponent<Text>().text = gameObject.name + " discovered";
+        notificationsPlane.GetComponent<Text>().text = gameObject.name + "\n" + " discovered";
         GetComponent<AudioSource>().enabled = true;
         notificationShown = true; 
         actualBuilding.SetActive(true);

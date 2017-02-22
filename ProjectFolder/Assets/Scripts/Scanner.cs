@@ -23,32 +23,33 @@ public class Scanner : MonoBehaviour
         Vector3 fwd = centerPoint.transform.position;
         if (Physics.Raycast(fwd, centerPoint.transform.forward, out hit, 50))
         {
+            print(hit.collider.gameObject.name);
             if (hit.collider.gameObject.tag == "Building")
             {
                 notificationPlane.SetActive(true);
-                if (Input.GetButtonDown("joystick button 2") || Input.GetKey("w"))
+                if (Input.GetButtonDown("joystick button 7"))
                 {
-                    print(hit.collider.gameObject.name);
-                    if (hit.collider.gameObject.name == "King Williams")
-                    {
-                        hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
-                        notificationPlane.SetActive(false);
-                    }
-                    if (hit.collider.gameObject.name == "Queen Anne")
-                    {
-                        hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
-                        notificationPlane.SetActive(false);
-                    }
-                    if (hit.collider.gameObject.name == "King Charles")
-                    {
-                        hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
-                        notificationPlane.SetActive(false);
-                    }
-                    if (hit.collider.gameObject.name == "Queen Mary")
-                    {
-                        hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
-                        notificationPlane.SetActive(false);
-                    }
+                    hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                    notificationPlane.SetActive(false);
+                    //if (hit.collider.gameObject.name == "King Williams")
+                    //{
+                    //    hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                    //    notificationPlane.SetActive(false);
+                    //}
+                    //if (hit.collider.gameObject.name == "Queen Anne")
+                    //{
+                    //    hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                    //    notificationPlane.SetActive(false);
+                    //}
+                    //if (hit.collider.gameObject.name == "King Charles")
+                    //{
+                    //    hit.collider.gameObject.GetComponent<ScanObject>().enabled = true;
+                    //    notificationPlane.SetActive(false);
+                    //}
+                    //if (hit.collider.gameObject.name == "Queen Mary")
+                    //{
+                        
+                    //}
                 }
                 
             }
@@ -56,9 +57,10 @@ public class Scanner : MonoBehaviour
         else
         {
             notificationPlane.SetActive(false);
+            
         }
 
-        if (Input.GetButtonDown("Reset") || Input.GetMouseButtonDown(1))
+        if (Input.GetButtonDown("joystick button 5") && Input.GetButtonDown("joystick button 4"))
         {
             SceneManager.LoadScene(0);
         }
