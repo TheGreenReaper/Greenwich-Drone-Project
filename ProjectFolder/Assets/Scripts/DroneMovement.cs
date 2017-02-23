@@ -38,7 +38,7 @@ public class DroneMovement : MonoBehaviour
         droneRB.AddRelativeForce(Vector3.up * upForce);
         drone.transform.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
         droneRB.rotation = Quaternion.Euler(new Vector3(0, currentYRotation, 0));
-        if (Input.GetAxis("RightVertical") == 0 && Input.GetAxis("RightHorizontal") == 0 && slowtimer > 1.5f)
+        if (Input.GetAxis("RightVertical") == 0 && Input.GetAxis("RightHorizontal") == 0 && slowtimer > 0.5f)
         {
             droneRB.isKinematic = true;
         }
@@ -51,14 +51,14 @@ public class DroneMovement : MonoBehaviour
 
     void VerticalMovement()
     {
-        if(Input.GetAxis("LeftVertical") > 0)
+        if(Input.GetAxis("LeftVertical") > 0 || Input.GetKey("t"))
         {
-            upForce = 250;
+            upForce = 550;
             slowtimer = 0;
         }
-        else if (Input.GetAxis("LeftVertical") < 0)
+        else if (Input.GetAxis("LeftVertical") < 0 || Input.GetKey("g"))
         {
-            upForce = -150;
+            upForce = -350;
             slowtimer = 0;
         }
         else 

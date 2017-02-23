@@ -7,7 +7,7 @@ public class ScanObject : MonoBehaviour
 {
     Material mat;
     Color color;
-    float t;
+    float timer;
     int time;
     bool notificationShown = false;
     public GameObject notificationsPlane;
@@ -22,8 +22,13 @@ public class ScanObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(timer);
         GetComponent<Renderer>().material.color = color;
-
+        if (notificationsPlane.activeInHierarchy == true && timer <= 10)
+        {
+            timer += Time.deltaTime * 4;
+            notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(" + (timer * 10).ToString("F0") + "%)";
+        }
 
     }
     void Fade()
@@ -32,14 +37,10 @@ public class ScanObject : MonoBehaviour
     }
     IEnumerator Notification()
     {
+        timer = 0;
         gameObject.tag = "Untagged";
-        notificationsPlane.SetActive(true);
-        notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(33%)";
-        yield return new WaitForSeconds(1);
-        notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(66%)"; 
-        yield return new WaitForSeconds(1);
-        notificationsPlane.GetComponent<Text>().text = "Loading" + "\n" + "(99%)";
-        yield return new WaitForSeconds(1);
+        notificationsPlane.SetActive(true);      
+        yield return new WaitForSeconds(3);
         notificationsPlane.GetComponent<Text>().text = gameObject.name + "\n" + " discovered";
         GetComponent<AudioSource>().enabled = true;
         notificationShown = true; 
