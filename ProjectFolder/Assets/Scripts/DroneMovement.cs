@@ -120,10 +120,12 @@ public class DroneMovement : MonoBehaviour
         {
             droneRB.AddRelativeForce(Vector3.right * Input.GetAxis("RightHorizontal") * sideMovementAmount);
             tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * Input.GetAxis("RightHorizontal"), ref tiltAmountVelocity, 0.5f);
+            slowtimer = 0;
         }
         else
         {
             tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltAmountVelocity, 0.1f);
+            slowtimer = 0;
         }
     }
     void CheckKey()
